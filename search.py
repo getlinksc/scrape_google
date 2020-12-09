@@ -17,14 +17,20 @@ resp = requests.get(URL, headers=headers)
 if resp.status_code == 200:
     soup = BeautifulSoup(resp.content, "html.parser")
     results = []
-    for g in soup.find_all('div', class_='r'):
-        anchors = g.find_all('a')
-        if anchors:
-            link = anchors[0]['href']
-            title = g.find('h3').text
-            item = {
-                "title": title,
-                "link": link
-            }
-            results.append(item)
+    for g in soup.find_all('div', class_='g'):
+        # anchor div
+        rc = g.find('div', class_='rc')
+        # description div
+        s = g.find('div', class_='s')
+        if rc:
+            divs = rc.find_all('div', recursive=False)
+            if len(divs) >= 2:
+                anchor = divs[0].find('a')
+                link = anchor['href']
+                title = anchor.find('h3').text
+                item = {
+                    "title": title,
+                    "link": link
+                }
+                results.append(item)
     print(results)
