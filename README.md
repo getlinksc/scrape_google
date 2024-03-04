@@ -30,7 +30,7 @@ and integrate systems more effectively.
 * [Pip](https://pip.pypa.io/en/stable/) - The Python Package Installer
 * [Requests](https://requests.readthedocs.io/en/master/) - HTTP for Humans
 * [Beautiful Soup](https://requests.readthedocs.io/en/master/) - a Python library for pulling data out of HTML and XML files
-* [Google Search API](https://rapidapi.com/apigeek/api/google-search3) - an API for scraping Google search results
+* [Google Search API](https://link.sc) - an API for scraping Google search results
 
 ## Contributing
 
